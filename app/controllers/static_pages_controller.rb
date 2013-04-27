@@ -8,6 +8,12 @@ class StaticPagesController < ApplicationController
 	end
 
 	def create
+		# server messages
+		puts "**********************"
+		puts params
+		puts "**********************"
+
+		# create code
 		@new_user = User.new(params[:user])
 		if @new_user.save
 			flash[:success] = "New user created!"
