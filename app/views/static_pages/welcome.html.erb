@@ -2,3 +2,13 @@
 <p>This is how great this demo is: 
 	<%= @math %>
 </p>
+<p>Our last user was: <%= @last_user_name %></p>
+<p>Their email was: <%= @last_user_email %></p>
+
+<%= form_for @new_user, :url => { :action => "create" } do |f| %>
+  <%= label_tag(:q, "Name: ") %>
+  <%= f.text_field :name %><br />
+  <%= label_tag(:q, "Email: ") %>
+  <%= f.text_field :email %><br />
+  <%= f.submit "Create new account", :class => "btn btn-success"%>
+<% end %>
